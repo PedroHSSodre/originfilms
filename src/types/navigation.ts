@@ -2,7 +2,7 @@ export type RootStackNavigation = {
   Home: undefined;
   Films: undefined;
   Detail: {
-    film_id: string;
+    film_id: number;
   };
 };
 
