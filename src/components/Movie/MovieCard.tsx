@@ -1,6 +1,7 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Card, Flex, Image, Text, View, theme} from 'native-base';
+
 import {Movie} from '../../screens/Films';
 
 type MovieCardProps = {

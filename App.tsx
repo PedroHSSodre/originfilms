@@ -1,6 +1,7 @@
-import {NativeBaseProvider, StatusBar} from 'native-base';
 import React from 'react';
 import {SafeAreaView, ViewStyle} from 'react-native';
+import {NativeBaseProvider, StatusBar} from 'native-base';
+
 import {RootNavigation} from './src/components/Routes';
 
 function App(): JSX.Element {

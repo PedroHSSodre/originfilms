@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, View} from 'native-base';
-import CategoriesCard, {Category} from './CategoriesCard';
-import {apiOptions} from '../../config/api';
 import {TouchableOpacity} from 'react-native';
+import {FlatList, View} from 'native-base';
+
+import CategoriesCard, {Category} from './CategoriesCard';
+
+import {apiOptions} from '../../config/api';
 
 const CategoryList = () => {
   const [category, setCategory] = useState<Category[]>([]);

@@ -5,11 +5,9 @@ import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 import {Movie} from '../../screens/Films';
-
 import MovieCard from './MovieCard';
 
 import {apiOptions} from '../../config/api';
-
 import {RootStackNavigation, Routes} from '../../types/navigation';
 
 type Option = 'popular' | 'upcoming';

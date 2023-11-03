@@ -5,15 +5,13 @@ import {useNavigation} from '@react-navigation/native';
 import {Flex, Image, Text, View, theme} from 'native-base';
 import IconMT from 'react-native-vector-icons/MaterialIcons';
 import {useRoute, type RouteProp} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 import {Wrapper} from '../components/Wrapper';
-
 import {Movie} from './Films';
 
 import {apiOptions} from '../config/api';
-
 import {RootStackNavigation} from '../types/navigation';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 export const Detail = () => {
   const navigation =

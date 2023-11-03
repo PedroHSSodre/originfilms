@@ -1,7 +1,7 @@
 import React from 'react';
-import {Flex, IFlexProps, IScrollViewProps, ScrollView} from 'native-base';
 import {ImageBackground} from 'react-native';
 import {type StyleProp, type ViewStyle} from 'react-native';
+import {Flex, IFlexProps, IScrollViewProps, ScrollView} from 'native-base';
 
 type WrapperProps = {bgImage?: boolean; withScrollView?: boolean} & IFlexProps;
 
