@@ -48,7 +48,7 @@ export const Detail = () => {
                 w={16}
                 h={16}
                 backgroundColor="white"
-                borderRadius={8}>
+                borderRadius={20}>
                 <IconMT name={'keyboard-arrow-left'} size={38} color="blue" />
               </Flex>
             </TouchableOpacity>
@@ -69,7 +69,7 @@ export const Detail = () => {
             {movie?.title}
           </Text>
         </View>
-        <Flex flexDirection="row" alignItems="center">
+        <Flex flexDirection="row" alignItems="center" mt={2}>
           <Icon name="star-sharp" color={theme.colors.yellow[500]} />
           <Text ml={2}>
             {movie?.vote_average.toFixed(2)} ({movie?.vote_count} Reviews)
