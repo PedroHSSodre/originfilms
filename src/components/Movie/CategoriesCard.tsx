@@ -1,19 +1,17 @@
 import React from 'react';
 import {Text, View} from 'native-base';
-
-export type Category = {
-  id: number;
-  name: string;
-};
+import {MovieCategory} from '../../types/movie';
 
 type CategoryItemProps = {
-  item: Category;
+  item: MovieCategory;
   categorySelected?: number;
 };
 
 const CategoriesCard = (props: CategoryItemProps) => {
   const {item, categorySelected = 28} = props;
+
   const isSelected = item.id === categorySelected;
+
   return (
     <View
       px={4}
