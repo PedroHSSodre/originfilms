@@ -42,7 +42,7 @@ const MovieList = (props: MovieListProps) => {
   const option = searchCategoryOptions[label];
 
   const {data, isFetching} = useQuery({
-    queryKey: ['movieList'],
+    queryKey: [`${label}:movieList`],
     queryFn: () => getMovies(option),
   });
   const navigation =
