@@ -1,31 +1,26 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {TouchableOpacity} from 'react-native';
 import {FlatList, View} from 'native-base';
 
-import CategoriesCard, {Category} from './CategoriesCard';
+import CategoriesCard from './CategoriesCard';
 
 import {apiOptions} from '../../config/api';
+import {MovieCategory} from '../../types/movie';
+import {useQuery} from '@tanstack/react-query';
 
 const CategoryList = () => {
-  const [category, setCategory] = useState<Category[]>([]);
   const [categorySelected, setCategorySelected] = useState<number | undefined>(
     undefined,
   );
-
-  useEffect(() => {
-    fetch(
-      'https://api.themoviedb.org/3/genre/movie/list?language=pt',
-      apiOptions,
-    )
-      .then(response => response.json())
-      .then(response => setCategory(response.genres))
-      .catch(err => console.error(err));
-  }, []);
+  const {data} = useQuery({
+    queryKey: ['movieCategoryList'],
+    queryFn: () => getMovieCategory(),
+  });
 
   return (
     <View>
       <FlatList
-        data={category}
+        data={data}
         horizontal
         showsHorizontalScrollIndicator={false}
         keyExtractor={item => item.id.toString()}
@@ -37,6 +32,18 @@ const CategoryList = () => {
       />
     </View>
   );
+};
+
+const getMovieCategory = (): Promise<MovieCategory[]> => {
+  return new Promise((resolve, reject) => {
+    fetch(
+      'https://api.themoviedb.org/3/genre/movie/list?language=pt',
+      apiOptions,
+    )
+      .then(response => response.json())
+      .then(response => resolve(response.genres))
+      .catch(err => reject(err));
+  });
 };
 
 export default CategoryList;
