@@ -2,7 +2,8 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Card, Flex, Image, Text, View, theme} from 'native-base';
 
-import {Movie} from '../../screens/Films';
+import type {Movie} from '../../types/movie';
+import {imgPrefix} from '../../config/constants';
 
 type MovieCardProps = {
   item: Movie;
@@ -61,7 +62,5 @@ const MovieCard = (props: MovieCardProps) => {
     </Card>
   );
 };
-
-const imgPrefix = 'https://image.tmdb.org/t/p/w500';
 
 export default MovieCard;

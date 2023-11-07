@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {TouchableOpacity} from 'react-native';
 import {FlatList, View} from 'native-base';
 
@@ -7,11 +7,14 @@ import CategoriesCard from './CategoriesCard';
 import {apiOptions} from '../../config/api';
 import {MovieCategory} from '../../types/movie';
 import {useQuery} from '@tanstack/react-query';
+import useMovieCategory from '../../hooks/useMovieCategory';
 
 const CategoryList = () => {
-  const [categorySelected, setCategorySelected] = useState<number | undefined>(
-    undefined,
-  );
+  const {
+    movieCategorySelected: categorySelected,
+    setMovieCategory: setCategorySelected,
+  } = useMovieCategory();
+
   const {data} = useQuery({
     queryKey: ['movieCategoryList'],
     queryFn: () => getMovieCategory(),
@@ -25,8 +28,11 @@ const CategoryList = () => {
         showsHorizontalScrollIndicator={false}
         keyExtractor={item => item.id.toString()}
         renderItem={({item}) => (
-          <TouchableOpacity onPress={() => setCategorySelected(item.id)}>
-            <CategoriesCard item={item} categorySelected={categorySelected} />
+          <TouchableOpacity onPress={() => setCategorySelected?.(item)}>
+            <CategoriesCard
+              item={item}
+              categorySelected={categorySelected?.id ?? 0}
+            />
           </TouchableOpacity>
         )}
       />

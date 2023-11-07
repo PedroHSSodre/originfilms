@@ -9,10 +9,11 @@ import {useRoute, type RouteProp} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 import {Wrapper} from '../components/Wrapper';
-import {Movie} from './Films';
 
 import {apiOptions} from '../config/api';
 import {RootStackNavigation} from '../types/navigation';
+import type {Movie} from '../types/movie';
+import {imgPrefix} from '../config/constants';
 
 export const Detail = () => {
   const navigation =
@@ -109,5 +110,3 @@ const getMovieDetail = (film_id: Movie['id']): Promise<Movie> => {
       .catch(err => reject(err));
   });
 };
-
-const imgPrefix = 'https://image.tmdb.org/t/p/w500';

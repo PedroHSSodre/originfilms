@@ -5,6 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {Home} from '../screens/Home';
 import {Films} from '../screens/Films';
 import {Detail} from '../screens/Detail';
+import {CategoryProvider} from '../hooks/useMovieCategory';
 
 const Stack = createNativeStackNavigator<RootStackNavigation>();
 
@@ -29,9 +30,13 @@ const publicRoutes = [
   <Stack.Screen
     key={Routes.FILMS}
     name={Routes.FILMS}
-    options={navigationOptions}
-    component={Films}
-  />,
+    options={navigationOptions}>
+    {() => (
+      <CategoryProvider>
+        <Films />
+      </CategoryProvider>
+    )}
+  </Stack.Screen>,
   <Stack.Screen
     key={Routes.DETAIL}
     name={Routes.DETAIL}
