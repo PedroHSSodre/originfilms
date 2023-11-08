@@ -2,9 +2,9 @@ import React from 'react';
 import {Flex, Text, View} from 'native-base';
 import {type StyleProp, type ViewStyle} from 'react-native';
 
-import {Wrapper} from '../components/Wrapper';
-import MovieList from '../components/Movie/MovieList';
-import CategoryList from '../components/Movie/CategoryList';
+import {Wrapper} from '@/components/Wrapper';
+import MovieList from '@/components/Movie/MovieList';
+import CategoryList from '@/components/Movie/CategoryList';
 
 export const Films = () => {
   return (

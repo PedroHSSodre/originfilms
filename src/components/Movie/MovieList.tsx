@@ -1,16 +1,16 @@
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
 import {useQuery} from '@tanstack/react-query';
-import {FlatList, Flex, Spinner, Text, View} from 'native-base';
 import {useNavigation} from '@react-navigation/native';
+import {FlatList, Flex, Spinner, Text, View} from 'native-base';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
-import MovieCard from './MovieCard';
+import MovieCard from '@/components/Movie/MovieCard';
 
-import {apiOptions} from '../../config/api';
-import {RootStackNavigation, Routes} from '../../types/navigation';
-import {Movie} from '../../types/movie';
-import useMovieCategory from '../../hooks/useMovieCategory';
+import {apiOptions} from '@/config/api';
+import useMovieCategory from '@/hooks/useMovieCategory';
+import {Movie} from '@/types/movie';
+import {RootStackNavigation, Routes} from '@/types/navigation';
 
 type OptionLabel = 'popular' | 'upcoming';
 

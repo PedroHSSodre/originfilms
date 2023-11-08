@@ -6,7 +6,7 @@ import React, {
   useContext,
   useState,
 } from 'react';
-import type {MovieCategory} from '../types/movie';
+import type {MovieCategory} from '@/types/movie';
 
 type CategoryContext = {
   movieCategorySelected?: MovieCategory;

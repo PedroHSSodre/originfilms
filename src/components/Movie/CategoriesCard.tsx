@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, View} from 'native-base';
-import {MovieCategory} from '../../types/movie';
+
+import {MovieCategory} from '@/types/movie';
 
 type CategoryItemProps = {
   item: MovieCategory;

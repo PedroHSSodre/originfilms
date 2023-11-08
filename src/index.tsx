@@ -3,7 +3,7 @@ import {SafeAreaView, ViewStyle} from 'react-native';
 import {NativeBaseProvider, StatusBar} from 'native-base';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 
-import {RootNavigation} from './src/components/Routes';
+import {RootNavigation} from '@/components/Routes';
 
 const queryClient = new QueryClient();
 

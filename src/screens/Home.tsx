@@ -4,10 +4,10 @@ import {Button, Flex, Text, View, theme} from 'native-base';
 import {type StyleProp, type ViewStyle} from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
-import {Wrapper} from '../components/Wrapper';
+import {Wrapper} from '@/components/Wrapper';
 
-import {RootStackNavigation, Routes} from '../types/navigation';
-import {apiOptions} from '../config/api';
+import {RootStackNavigation, Routes} from '@/types/navigation';
+import {apiOptions} from '@/config/api';
 
 export const Home = () => {
   const navigation =
@@ -37,7 +37,7 @@ export const Home = () => {
           </Text>
         </View>
         <View>
-          <Text fontSize={38} color={theme.colors.white} mb={6}>
+          <Text fontSize={20} color={theme.colors.white} mb={6}>
             Catálogo de Filmes
           </Text>
           <Button

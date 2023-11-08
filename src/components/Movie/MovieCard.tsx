@@ -2,8 +2,8 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Card, Flex, Image, Text, View, theme} from 'native-base';
 
-import type {Movie} from '../../types/movie';
-import {imgPrefix} from '../../config/constants';
+import type {Movie} from '@/types/movie';
+import {imgPrefix} from '@/config/constants';
 
 type MovieCardProps = {
   item: Movie;

@@ -2,10 +2,12 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {RootStackNavigation, Routes} from '../types/navigation';
 import {NavigationContainer} from '@react-navigation/native';
-import {Home} from '../screens/Home';
-import {Films} from '../screens/Films';
-import {Detail} from '../screens/Detail';
-import {CategoryProvider} from '../hooks/useMovieCategory';
+
+import {Home} from '@/screens/Home';
+import {Films} from '@/screens/Films';
+import {Detail} from '@/screens/Detail';
+
+import {CategoryProvider} from '@/hooks/useMovieCategory';
 
 const Stack = createNativeStackNavigator<RootStackNavigation>();
 

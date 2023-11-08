@@ -1,19 +1,22 @@
 import React, {useState} from 'react';
 import {TouchableOpacity} from 'react-native';
 import {useQuery} from '@tanstack/react-query';
+import {
+  useRoute,
+  type RouteProp,
+  useNavigation,
+} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {useNavigation} from '@react-navigation/native';
 import {Flex, Image, Spinner, Text, View, theme} from 'native-base';
 import IconMT from 'react-native-vector-icons/MaterialIcons';
-import {useRoute, type RouteProp} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
-import {Wrapper} from '../components/Wrapper';
+import {Wrapper} from '@/components/Wrapper';
 
-import {apiOptions} from '../config/api';
-import {RootStackNavigation} from '../types/navigation';
-import type {Movie} from '../types/movie';
-import {imgPrefix} from '../config/constants';
+import {apiOptions} from '@/config/api';
+import {imgPrefix} from '@/config/constants';
+import type {Movie} from '@/types/movie';
+import {RootStackNavigation} from '@/types/navigation';
 
 export const Detail = () => {
   const navigation =

@@ -1,13 +1,13 @@
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
 import {FlatList, View} from 'native-base';
-
-import CategoriesCard from './CategoriesCard';
-
-import {apiOptions} from '../../config/api';
-import {MovieCategory} from '../../types/movie';
+import {TouchableOpacity} from 'react-native';
 import {useQuery} from '@tanstack/react-query';
-import useMovieCategory from '../../hooks/useMovieCategory';
+
+import CategoriesCard from '@/components/Movie/CategoriesCard';
+
+import {apiOptions} from '@/config/api';
+import {MovieCategory} from '@/types/movie';
+import useMovieCategory from '@/hooks/useMovieCategory';
 
 const CategoryList = () => {
   const {
