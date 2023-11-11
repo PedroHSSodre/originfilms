@@ -1,79 +1,58 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Origin Films
 
-# Getting Started
+## Descrição da Aplicação
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+A "Origin Films" é uma aplicação construída para fins de portfólio, que consome uma API de filmes disponibilizada pelo TMDB.
 
-## Step 1: Start the Metro Server
+### Principais Recursos
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+- Listagem de filmes
+- Possibilidade de trocar os filmes por categoria
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Instalação
 
-```bash
-# using npm
-npm start
+1. Faça o clone do projeto em sua máquina.
+2. Execute `npm i` ou `yarn` para instalar as dependências.
+3. Inicie o Metro com `yarn start` ou `npm start`.
+4. Execute a aplicação com `npm run android` ou `yarn android` para Android, ou `npm run ios` ou `yarn ios` para iOS.
 
-# OR using Yarn
-yarn start
-```
+### Configuração
 
-## Step 2: Start your Application
+- Crie uma conta no site [The Movie Database (TMDb)](https://www.themoviedb.org/).
+- Copie sua chave de API.
+- Cole a chave no campo `TMDB_ACCESS_TOKEN` do arquivo `.env` na raiz do projeto.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+## Uso
 
-### For Android
+Certifique-se de ter configurado a chave de API do TMDb no arquivo `.env`. Em seguida, siga os passos abaixo:
 
-```bash
-# using npm
-npm run android
+1. Inicie o Metro com `yarn start` ou `npm start`.
+2. Execute a aplicação com `npm run android` ou `yarn android` para Android, ou `npm run ios` ou `yarn ios` para iOS.
 
-# OR using Yarn
-yarn android
-```
+## Estrutura do Projeto
 
-### For iOS
+- `src/`: Código-fonte da aplicação.
+- `src/components/`: Componentes reutilizáveis.
+- `src/screens/`: Telas da aplicação.
+- `src/hooks/`: Hooks personalizados.
+- `src/types/`: Tipagem geral do projeto.
+- `src/theme/`: Configurações de tema do projeto.
+- `src/config/`: Arquivos de configurações do projeto.
+- `src/utils/`: Arquivos de utilidades no geral.
+- ...
 
-```bash
-# using npm
-npm run ios
+## Tecnologias Utilizadas
 
-# OR using Yarn
-yarn ios
-```
+- React Native
+- React Query para requisições à API e gerenciamento de estado das listas de filmes e categorias
+- Native Base para estilização e montagem de componentes
+- React-native-vector-icons para exibição de ícones
+- TypeScript
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## Licença
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+N/A (Não se aplica no momento).
 
-## Step 3: Modifying your App
+## Contato
 
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Para dúvidas ou problemas, entre em contato pelo e-mail: pedrosodredev@gmail.com.
