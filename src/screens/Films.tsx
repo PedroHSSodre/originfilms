@@ -1,6 +1,6 @@
 import React from 'react';
 import {Flex, Text, View} from 'native-base';
-import {type StyleProp, type ViewStyle} from 'react-native';
+import {TouchableOpacity, type StyleProp, type ViewStyle} from 'react-native';
 
 import {Wrapper} from '@/components/Wrapper';
 import MovieList from '@/components/Movie/MovieList';
@@ -14,9 +14,11 @@ export const Films = () => {
           <View>
             <Text fontSize={14}>Explorar</Text>
           </View>
-          <View>
-            <Text>Português</Text>
-          </View>
+          <TouchableOpacity>
+            <View bg="red.500" borderRadius={16} px={6} py={2}>
+              <Text color="white">Favoritos</Text>
+            </View>
+          </TouchableOpacity>
         </Flex>
         <View mb={8}>
           <Text fontSize={32} bold>

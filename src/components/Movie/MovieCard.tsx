@@ -1,9 +1,11 @@
 import React from 'react';
+import {TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Card, Flex, Image, Text, View, theme} from 'native-base';
 
-import type {Movie} from '@/types/movie';
 import {imgPrefix} from '@/config/constants';
+
+import type {Movie} from '@/types/movie';
 
 type MovieCardProps = {
   item: Movie;
@@ -11,6 +13,7 @@ type MovieCardProps = {
 
 const MovieCard = (props: MovieCardProps) => {
   const {item} = props;
+
   return (
     <Card
       mr={8}
@@ -20,32 +23,37 @@ const MovieCard = (props: MovieCardProps) => {
       h={350}
       shadow="none"
       position="relative">
-      <Flex flex={1} zIndex={2} justifyContent="flex-end" p={6}>
-        <View
-          w="63%"
-          mb={3}
-          px={4}
-          backgroundColor="#4D5652"
-          py={2}
-          borderRadius={58}>
-          <Text color={theme.colors.white} fontSize={12}>
-            {item.title}
-          </Text>
-        </View>
+      <Flex
+        flex={1}
+        zIndex={2}
+        justifyContent="flex-end"
+        alignContent="space-between"
+        p={6}>
         <Flex
-          mb={3}
           flexDirection="row"
-          px={2}
-          backgroundColor="#4D5652"
-          py={1}
           justifyContent="space-between"
-          alignItems="center"
-          borderRadius={58}
-          width={50}>
-          <Icon name="star-sharp" color={theme.colors.yellow[500]} />
-          <Text color={theme.colors.white} fontSize={12}>
-            {item.vote_average.toFixed(2)}
-          </Text>
+          alignItems="flex-end">
+          <Flex
+            h={26}
+            mb={3}
+            flexDirection="row"
+            px={2}
+            backgroundColor="#4D5652"
+            py={1}
+            justifyContent="space-between"
+            alignItems="center"
+            borderRadius={58}
+            width={50}>
+            <Icon name="star-sharp" color={theme.colors.yellow[500]} />
+            <Text color={theme.colors.white} fontSize={12}>
+              {item.vote_average.toFixed(2)}
+            </Text>
+          </Flex>
+          <TouchableOpacity>
+            <View p={2} bg="white" borderRadius={50}>
+              <Icon name="heart" size={32} color={theme.colors.red[500]} />
+            </View>
+          </TouchableOpacity>
         </Flex>
       </Flex>
       <Image

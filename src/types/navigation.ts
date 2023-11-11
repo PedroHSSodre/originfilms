@@ -1,3 +1,5 @@
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+
 export type RootStackNavigation = {
   Home: undefined;
   Films: undefined;
@@ -11,3 +13,6 @@ export enum Routes {
   FILMS = 'Films',
   DETAIL = 'Detail',
 }
+
+export interface PageProps<T extends keyof RootStackNavigation>
+  extends NativeStackScreenProps<RootStackNavigation, T> {}

@@ -1,17 +1,16 @@
 import React, {useEffect} from 'react';
-import {useNavigation} from '@react-navigation/native';
 import {Button, Flex, Text, View, theme} from 'native-base';
 import {type StyleProp, type ViewStyle} from 'react-native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 import {Wrapper} from '@/components/Wrapper';
 
-import {RootStackNavigation, Routes} from '@/types/navigation';
+import {PageProps, Routes} from '@/types/navigation';
 import {apiOptions} from '@/config/api';
 
-export const Home = () => {
-  const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackNavigation>>();
+type HomePageProps = PageProps<Routes.HOME> & {};
+
+export const Home = (props: HomePageProps) => {
+  const {navigation} = props;
 
   const handleExplore = () => navigation.navigate(Routes.FILMS);
 

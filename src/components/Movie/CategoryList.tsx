@@ -6,7 +6,7 @@ import {useQuery} from '@tanstack/react-query';
 import CategoriesCard from '@/components/Movie/CategoriesCard';
 
 import {apiOptions} from '@/config/api';
-import {MovieCategory} from '@/types/movie';
+import type {MovieCategory} from '@/types/movie';
 import useMovieCategory from '@/hooks/useMovieCategory';
 
 const CategoryList = () => {
@@ -31,7 +31,7 @@ const CategoryList = () => {
           <TouchableOpacity onPress={() => setCategorySelected?.(item)}>
             <CategoriesCard
               item={item}
-              categorySelected={categorySelected?.id ?? 0}
+              categorySelected={categorySelected.id}
             />
           </TouchableOpacity>
         )}

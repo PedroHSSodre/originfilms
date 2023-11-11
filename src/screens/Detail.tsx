@@ -1,26 +1,23 @@
 import React, {useState} from 'react';
 import {TouchableOpacity} from 'react-native';
 import {useQuery} from '@tanstack/react-query';
-import {
-  useRoute,
-  type RouteProp,
-  useNavigation,
-} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {Flex, Image, Spinner, Text, View, theme} from 'native-base';
 import IconMT from 'react-native-vector-icons/MaterialIcons';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {useRoute, type RouteProp} from '@react-navigation/native';
+import {Flex, Image, Spinner, Text, View, theme} from 'native-base';
 
 import {Wrapper} from '@/components/Wrapper';
 
 import {apiOptions} from '@/config/api';
 import {imgPrefix} from '@/config/constants';
 import type {Movie} from '@/types/movie';
-import {RootStackNavigation} from '@/types/navigation';
+import type {PageProps, RootStackNavigation, Routes} from '@/types/navigation';
 
-export const Detail = () => {
-  const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackNavigation>>();
+type DetailPageProps = PageProps<Routes.DETAIL> & {};
+
+export const Detail = (props: DetailPageProps) => {
+  const {navigation} = props;
+
   const route = useRoute<RouteProp<RootStackNavigation, 'Detail'>>();
   const [seeMoreOverwiew, setSeeMoreOverwiew] = useState(false);
 
@@ -82,20 +79,25 @@ export const Detail = () => {
           <View height={seeMoreOverwiew ? 'auto' : 75} overflow="hidden">
             <Text>{data?.overview}</Text>
           </View>
-          <TouchableOpacity onPress={() => setSeeMoreOverwiew(value => !value)}>
-            <Flex flexDirection="row" mt={2} alignItems="flex-end">
-              <Text bold color="blue.800" fontSize={16}>
-                Ver {seeMoreOverwiew ? 'menos' : 'mais'}
-              </Text>
-              <IconMT
-                name={
-                  seeMoreOverwiew ? 'keyboard-arrow-up' : 'keyboard-arrow-down'
-                }
-                size={24}
-                color="blue"
-              />
-            </Flex>
-          </TouchableOpacity>
+          {data?.overview ? (
+            <TouchableOpacity
+              onPress={() => setSeeMoreOverwiew(value => !value)}>
+              <Flex flexDirection="row" mt={2} alignItems="flex-end">
+                <Text bold color="blue.800" fontSize={16}>
+                  Ver {seeMoreOverwiew ? 'menos' : 'mais'}
+                </Text>
+                <IconMT
+                  name={
+                    seeMoreOverwiew
+                      ? 'keyboard-arrow-up'
+                      : 'keyboard-arrow-down'
+                  }
+                  size={24}
+                  color="blue"
+                />
+              </Flex>
+            </TouchableOpacity>
+          ) : null}
         </View>
       </Flex>
     </Wrapper>

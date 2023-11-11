@@ -9,11 +9,18 @@ import React, {
 import type {MovieCategory} from '@/types/movie';
 
 type CategoryContext = {
-  movieCategorySelected?: MovieCategory;
+  movieCategorySelected: MovieCategory;
   setMovieCategory?: Dispatch<SetStateAction<MovieCategory>>;
 };
 
-const MovieCategoryContext = createContext<CategoryContext>({});
+const defaultCategory = {
+  id: 28,
+  name: 'Ação',
+};
+
+const MovieCategoryContext = createContext<CategoryContext>({
+  movieCategorySelected: defaultCategory,
+});
 
 const useMovieCategory = () => useContext(MovieCategoryContext);
 
@@ -22,10 +29,8 @@ type CategoryProviderProps = {
 };
 
 export const CategoryProvider = ({children}: CategoryProviderProps) => {
-  const [movieCategory, setMovieCategory] = useState<MovieCategory>({
-    id: 28,
-    name: 'Ação',
-  });
+  const [movieCategory, setMovieCategory] =
+    useState<MovieCategory>(defaultCategory);
   return (
     <MovieCategoryContext.Provider
       value={{movieCategorySelected: movieCategory, setMovieCategory}}>

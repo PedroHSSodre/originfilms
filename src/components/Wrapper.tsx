@@ -7,6 +7,7 @@ type WrapperProps = {bgImage?: boolean; withScrollView?: boolean} & IFlexProps;
 
 export const Wrapper = (props: WrapperProps) => {
   const {children, bgImage = false, withScrollView = true, ...rest} = props;
+
   if (withScrollView) {
     return (
       <ScrollView {...scrollViewProps}>

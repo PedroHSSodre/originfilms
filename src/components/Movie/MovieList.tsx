@@ -9,23 +9,14 @@ import MovieCard from '@/components/Movie/MovieCard';
 
 import {apiOptions} from '@/config/api';
 import useMovieCategory from '@/hooks/useMovieCategory';
-import {Movie} from '@/types/movie';
-import {RootStackNavigation, Routes} from '@/types/navigation';
 
-type OptionLabel = 'popular' | 'upcoming';
+import {type RootStackNavigation, Routes} from '@/types/navigation';
+import type {Movie} from '@/types/movie';
+import type {CategoryOptions, Option, OptionLabel} from '@/types/filmCategory';
 
 type MovieListProps = {
   label?: OptionLabel;
   isDiscover?: boolean;
-};
-
-type Option = {
-  label: string;
-  value: string;
-};
-
-type CategoryOptions = {
-  [Key: string]: Option;
 };
 
 const MovieList = (props: MovieListProps) => {
@@ -44,8 +35,7 @@ const MovieList = (props: MovieListProps) => {
           : label
       }:movieList`,
     ],
-    queryFn: () =>
-      getMovies(option, isDiscover, movieCategorySelected?.id ?? 0),
+    queryFn: () => getMovies(option, isDiscover, movieCategorySelected.id),
   });
 
   const handleDetail = (id: number) =>

@@ -3,12 +3,12 @@ import {Text, View} from 'native-base';
 
 import {MovieCategory} from '@/types/movie';
 
-type CategoryItemProps = {
+type CategorCardProps = {
   item: MovieCategory;
   categorySelected?: number;
 };
 
-const CategoriesCard = (props: CategoryItemProps) => {
+const CategoriesCard = (props: CategorCardProps) => {
   const {item, categorySelected = 28} = props;
 
   const isSelected = item.id === categorySelected;
